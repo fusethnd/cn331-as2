@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+login
+{% endblock %}
+
+{% block style %}
+<style>
+    body{
+        padding-left: 35%;
+        padding-top: 10px;
+    }
+    body {
+        background-color: #f1f1f1;
+        
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="username">
+    <input type="password" name="password" placeholder="password">
+    <input type="submit" value="login">
+</form>
+
+{% endblock %}
